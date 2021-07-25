@@ -1,0 +1,20 @@
+// https://leetcode.com/problems/house-robber-ii
+
+class Solution {
+    public int rob(int[] nums) {
+      return Math.max(rob(nums,0,nums.length-1),rob(nums,1,nums.length));
+     }
+    
+    public int rob(int[] nums,int start,int end)
+    {
+        int prevTwo=0,prevOne=0,max=0;
+        
+        for(int i=start;i<end;i++)
+        {
+            max=Math.max(prevTwo+nums[i],prevOne);
+            prevTwo=prevOne;
+            prevOne=max;
+        }
+        return max;
+    }
+}

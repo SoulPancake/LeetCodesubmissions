@@ -1,0 +1,16 @@
+// https://leetcode.com/problems/count-primes
+
+func countPrimes(n int) int {
+	var cnt int
+	data := make([]bool, n)
+	for i := 2; i < n; i++ {
+		if data[i] {
+			continue
+		}
+		cnt++
+		for j := i * i; j < n; j += i {
+			data[j] = true
+		}
+	}
+	return cnt
+}

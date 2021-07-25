@@ -1,0 +1,8 @@
+// https://leetcode.com/problems/rank-scores
+
+SELECT s2.Score Score, s2.Rank Rank
+FROM Scores s1
+JOIN (SELECT Score, @Rank := @Rank + 1 AS Rank FROM 
+      (SELECT DISTINCT Score 
+       FROM Scores ORDER BY Score DESC) tmp, (SELECT @Rank := 0) p) s2 ON s1.Score = s2.Score
+ORDER BY 2

@@ -1,0 +1,12 @@
+// https://leetcode.com/problems/rank-scores
+
+/* Write your T-SQL query statement below */
+select t4.score as Score, CONVERT(t3.rownum, SIGNED) as Rank
+from scores as t4
+left join
+(
+select t1.score, (@row := @row + 1) as rownum from
+(select distinct score from scores order by score desc) as t1, (Select (@row :=0) ) as t2
+) as t3
+on t4.score = t3.score
+order by t4.score desc

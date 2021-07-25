@@ -1,0 +1,7 @@
+// https://leetcode.com/problems/employees-earning-more-than-their-managers
+
+select emp.name as Employee
+from Employee emp
+inner join 
+Employee man
+on emp.ManagerId = man.Id and  emp.Salary > man.Salary ;

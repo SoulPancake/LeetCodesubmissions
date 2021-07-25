@@ -1,0 +1,8 @@
+// https://leetcode.com/problems/consecutive-numbers
+
+# Write your MySQL query statement below
+select A.Num as ConsecutiveNums 
+from Logs A
+join Logs B on A.Id+1=B.Id and A.Num=B.Num
+join Logs C on B.Id+1=C.Id and B.Num=C.Num
+group by A.Num

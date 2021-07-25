@@ -1,0 +1,4 @@
+// https://leetcode.com/problems/classes-more-than-5-students
+
+# Write your MySQL query statement below
+select distinct C.class from courses as C,courses as D where  C.student<>D.student and C.class=D.class

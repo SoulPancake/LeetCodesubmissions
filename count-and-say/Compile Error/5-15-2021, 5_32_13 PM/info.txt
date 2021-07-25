@@ -1,0 +1,1 @@
+{"id":493429679,"lang":"racket","time":"2 months, 1 week","timestamp":1621080133,"status_display":"Compile Error","runtime":"N/A","url":"/submissions/detail/493429679/","is_pending":"Not Pending","title":"Count and Say","memory":"N/A","code":"(define/contract (count-and-say n)\n  (-> exact-integer? string?)\n\n  )","compare_result":null,"title_slug":"count-and-say"}

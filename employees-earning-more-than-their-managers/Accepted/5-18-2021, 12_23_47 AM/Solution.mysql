@@ -1,0 +1,12 @@
+// https://leetcode.com/problems/employees-earning-more-than-their-managers
+
+# Write your MySQL query statement below
+SELECT
+    Name as employee
+FROM    
+    Employee e
+WHERE
+    salary > any (
+    SELECT salary
+    FROM Employee 
+    WHERE Id = e.Managerid)

@@ -1,0 +1,10 @@
+// https://leetcode.com/problems/rank-scores
+
+select s1.score as Score, Rank
+from scores as s1
+left join (select score, @num := @num + 1 as Rank
+from (select distinct score from scores
+order by score desc) as s,
+(select @num := 0) as t ) as temp
+using (score)
+order by Rank;

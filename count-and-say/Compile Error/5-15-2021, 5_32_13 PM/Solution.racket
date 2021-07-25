@@ -1,0 +1,6 @@
+// https://leetcode.com/problems/count-and-say
+
+(define/contract (count-and-say n)
+  (-> exact-integer? string?)
+
+  )

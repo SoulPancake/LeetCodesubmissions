@@ -1,0 +1,1 @@
+{"id":460138913,"lang":"bash","time":"5 months","timestamp":1614176648,"status_display":"Accepted","runtime":"4 ms","url":"/submissions/detail/460138913/","is_pending":"Not Pending","title":"Tenth Line","memory":"3.6 MB","code":"# Read from the file file.txt and output the tenth line to stdout.\nsed \"10q;d\" file.txt","compare_result":"1111111","title_slug":"tenth-line"}

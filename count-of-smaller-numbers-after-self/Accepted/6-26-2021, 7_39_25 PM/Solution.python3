@@ -1,0 +1,12 @@
+// https://leetcode.com/problems/count-of-smaller-numbers-after-self
+
+from sortedcontainers import SortedList
+class Solution:
+    def countSmaller(self, nums: List[int]) -> List[int]:
+        sortedlist = SortedList([]) # To maintain the sorted list on go and also have O(logN) insert and bisect.
+        result = []
+        for num in nums[::-1]:
+            idx = sortedlist.bisect_left(num) # bisect to find where the current number should insert
+            result.append(idx) # this gives the lesser numbers on the left
+            sortedlist.add(num) # then update the sorted list 
+        return result[::-1]
